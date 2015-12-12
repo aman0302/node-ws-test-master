@@ -20,15 +20,20 @@
     <script>
       var host = location.origin.replace(/^http/, 'ws')
       var ws = new WebSocket(host);
+        
       ws.onmessage = function (event) {
-        var li = document.createElement('li');
-        li.innerHTML = JSON.parse(event.data);
-        document.querySelector('#pings').appendChild(li);
+         // alert(event.data);
+          var div = document.getElementById('pings');
+
+div.innerHTML += event.data+"\n";
       };
+        alert('sent');
+        ws.send("/fvolt/sensor");
+        
     </script>
   </head>
   <body>
     <h1>Pings</h1>
-    <ul id='pings'></ul>
+    <p id='pings'></p>
   </body>
 </html>
