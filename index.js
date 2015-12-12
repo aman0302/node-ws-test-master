@@ -2,7 +2,7 @@ var WebSocketServer = require("ws").Server
 var http = require("http")
 var express = require("express")
 var app = express()
-var port = process.env.PORT || 3001
+var port = process.env.PORT || 9000
 
 app.use(express.static(__dirname + "/"))
 
